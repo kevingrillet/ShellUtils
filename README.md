@@ -24,6 +24,13 @@ Require `$VERBOSE` equal `true` or `false`.
 # hexColorDelta <COLOR1> <COLOR2>
 ```
 
+## utils_git.sh
+
+```sh
+# get_latest_release <USER/REPO>
+# get_latest_version <USER/REPO> <BRANCH> <FOLDER/FILE>
+```
+
 ## utils_maths.sh
 
 ```sh
