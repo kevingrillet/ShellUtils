@@ -12,17 +12,17 @@ function my_exec {
   fi
 }
 
-# output <MESSAGE>
-# echo if verbose
-function output {
-  if [ $VERBOSE = true ] ;
-  then
-    echo -e "$1"
-  fi
-}
-
 # pause
 function pause {
   read -s -r -n 1 -p "Press any key to continue..."
   echo ""
+}
+
+# printVerbose <MESSAGE>
+# echo if verbose
+function printVerbose {
+  if [ $VERBOSE = true ] ;
+  then
+    echo -e "$1"
+  fi
 }
