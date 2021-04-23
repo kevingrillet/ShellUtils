@@ -13,14 +13,19 @@ Utils created for Shell
 # printVerbose <MESSAGE>
 ```
 
-Require `$VERBOSE` equal `true` or `false`.
+Require `$VERBOSE` equal `true` or `false`
 
 ## utils_colors.sh
 
 ```sh
 # colorDistance <COLOR1> <COLOR2>
 # hexColorDelta <COLOR1> <COLOR2>
+# sRGBEuclideanDistance <COLOR1> <COLOR2>
+# sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>
+# sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>
 ```
+
+Require `utils_maths.sh`
 
 ## utils_git.sh
 
@@ -50,4 +55,4 @@ Bunch of constants colors for a prettier output.
 # printWarn <MESSAGE>
 ```
 
-Require `utils_stdout_colors.sh`.
+Require `utils_stdout_colors.sh`
