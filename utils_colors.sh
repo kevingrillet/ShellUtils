@@ -25,12 +25,9 @@ function hexColorDelta() {
     color1=$1
     color2=$2
     r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    r=$((255-${r#-}))
     g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    g=$((255-${g#-}))
     b=$((0x${color1:4:2} - 0x${color2:4:2}))
-    b=$((255-${b#-}))
-    d=$((((r + g + b ) * 100) / (3 * 255)))
+    d=$(((((3 * 255) - (${r#-} + ${g#-} + ${b#-})) * 100) / (3 * 255)))
     echo $d
 }
 # time hexColorDelta 000000 000000 # output: 100    => same color = 100%
