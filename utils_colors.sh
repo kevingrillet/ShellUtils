@@ -4,6 +4,7 @@
 # colorDistance <COLOR1> <COLOR2>
 # The result should be send to sqrt
 # https://stackoverflow.com/a/9085524/7295428
+# 41843587 means opposit colors, 0 means same colors
 function colorDistance() {
     color1=$1
     color2=$2
@@ -19,6 +20,7 @@ function colorDistance() {
 
 # hexColorDelta <COLOR1> <COLOR2>
 # https://stackoverflow.com/a/22692625/7295428
+# 0 means opposit colors, 100 means same colors
 function hexColorDelta() {
     color1=$1
     color2=$2
