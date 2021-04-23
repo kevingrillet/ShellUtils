@@ -11,8 +11,8 @@ Utils created for Shell
 
 ```sh
 # my_exec <COMMAND>
-# output <MESSAGE>
 # pause
+# printVerbose <MESSAGE>
 ```
 
 Require `$VERBOSE` equal `true` or `false`.
@@ -33,3 +33,16 @@ Require `$VERBOSE` equal `true` or `false`.
 ## utils_stdout_colors.sh
 
 Bunch of constants colors for a prettier output.
+
+## utils_stdout_with_colors.sh
+
+```sh
+# printError <MESSAGE>
+# printInfo <MESSAGE>
+# printSuccess <MESSAGE>
+# printTask <MESSAGE>
+# printTip <MESSAGE>
+# printWarn <MESSAGE>
+```
+
+Require `utils_stdout_colors.sh`.
