@@ -57,3 +57,11 @@ function sqrt() {
     echo $sqrt
 }
 # sqrt 100 # output: 10
+
+# toPercent <VALUE> <MAX>
+function toPercent() {
+    value=$1
+    max=$2
+    echo $((value * 100 / max))
+}
+# toPercent 510 721
