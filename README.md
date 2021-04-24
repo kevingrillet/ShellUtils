@@ -23,6 +23,9 @@ Require `$VERBOSE` equal `true` or `false`
 # sRGBEuclideanDistance <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>
+# sRGBLuminance <COLOR>
+# sRGBLuminanceW3 <COLOR>
+# sRGBLuminanceHSP <COLOR>
 ```
 
 Require `utils_maths.sh`
