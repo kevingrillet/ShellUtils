@@ -10,7 +10,7 @@ Every script will be include one time: [`#pragma once`](https://stackoverflow.co
 
 ## utils.sh
 
-```sh
+```shell
 # execDebug <COMMAND>
 # execVerbose <COMMAND>
 # pause
@@ -23,7 +23,7 @@ Require `$VERBOSE` equal `true` or `false`
 
 ## utils_colors.sh
 
-```sh
+```shell
 # sRGBColorDelta <COLOR1> <COLOR2>
 # sRGBColorDistance <COLOR1> <COLOR2>
 # sRGBEuclideanDistance <COLOR1> <COLOR2>
@@ -39,14 +39,14 @@ Require `utils_maths.sh`
 
 ## utils_git.sh
 
-```sh
+```shell
 # get_latest_release <USER/REPO>
 # get_latest_version <USER/REPO> <BRANCH> <FOLDER/FILE>
 ```
 
 ## utils_maths.sh
 
-```sh
+```shell
 # abs <VALUE>
 # convertHexToDec <VALUE>
 # pow <BASE> <EXPONENT>
@@ -61,7 +61,8 @@ Bunch of constants colors for a prettier output.
 
 ## utils_stdout_with_colors.sh
 
-```sh
+```shell
+# printDebug <MESSAGE>
 # printError <MESSAGE>
 # printInfo <MESSAGE>
 # printSuccess <MESSAGE>
