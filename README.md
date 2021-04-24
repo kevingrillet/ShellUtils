@@ -11,10 +11,13 @@ Every script will be include one time: [`#pragma once`](https://stackoverflow.co
 ## utils.sh
 
 ```sh
-# my_exec <COMMAND>
+# execDebug <COMMAND>
+# execVerbose <COMMAND>
 # pause
 # printVerbose <MESSAGE>
 ```
+
+Require `$DEBUG` equal `true` or `false`
 
 Require `$VERBOSE` equal `true` or `false`
 
