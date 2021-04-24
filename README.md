@@ -8,7 +8,7 @@ Utils created for Shell.
 
 Every script will be include one time: [`#pragma once`](https://stackoverflow.com/a/58510109/7295428)
 
-Examples can be found in `.example`
+Examples can be found in [`.example`](./example/)
 
 ## [utils.sh](./utils/utils.sh)
 
@@ -37,7 +37,7 @@ Require `$VERBOSE` equal `true` or `false`
 # sRGBLuminanceHSP <COLOR>
 ```
 
-Require `utils_maths.sh`
+Require [`utils_maths.sh`](./utils/utils_maths.sh)
 
 ## [utils_git.sh](./utils/utils_git.sh)
 
@@ -73,4 +73,4 @@ Bunch of constants colors for a prettier output.
 # printWarn <MESSAGE>
 ```
 
-Require `utils_stdout_colors.sh`
+Require [`utils_stdout_colors.sh`](./utils/utils_stdout_colors.sh)
