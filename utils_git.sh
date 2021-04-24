@@ -1,5 +1,7 @@
 #!/bin/bash
+# utils_git.sh
 # https://www.shellcheck.net/
+[ -n "${UTILS_GIT}" ] && return; UTILS_GIT=0; #pragma once
 
 # get_latest_release <USER/REPO>
 # https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c

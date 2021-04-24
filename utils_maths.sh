@@ -1,5 +1,7 @@
 #!/bin/bash
+# utils_maths.sh
 # https://www.shellcheck.net/
+[ -n "${UTILS_MATHS}" ] && return; UTILS_MATHS=0; #pragma once
 
 # sqrt <VALUE>
 # https://stackoverflow.com/a/59263103/7295428

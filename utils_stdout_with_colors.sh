@@ -1,5 +1,7 @@
 #!/bin/bash
+# utils_stdout_with_colors.sh
 # https://www.shellcheck.net/
+[ -n "${UTILS_STDOUT_WITH_COLORS}" ] && return; UTILS_STDOUT_WITH_COLORS=0; #pragma once
 source utils_stdout_colors.sh
 
 # printError <MESSAGE>

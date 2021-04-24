@@ -1,5 +1,7 @@
 #!/bin/bash
+# utils.sh
 # https://www.shellcheck.net/
+[ -n "${UTILS}" ] && return; UTILS=0; #pragma once
 
 # my_exec <COMMAND>
 # hide the output if verbose is false

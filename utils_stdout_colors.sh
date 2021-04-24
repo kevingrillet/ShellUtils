@@ -1,5 +1,7 @@
 #!/bin/bash
+# utils_stdout_colors.sh
 # https://gist.github.com/vratiu/9780109
+[ -n "${UTILS_STDOUT_COLORS}" ] && return; UTILS_STDOUT_COLORS=0; #pragma once
 
 # Reset
 Color_Off="\033[0m"       # Text Reset

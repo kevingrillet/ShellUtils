@@ -4,7 +4,9 @@
 [![Windows 10](https://img.shields.io/badge/Windows-10-blue?logo=Windows)](https://www.microsoft.com/)
 [![Git Bash](https://img.shields.io/badge/Git%20Bash-git--bash.exe-orange?logo=GitHub)](https://desktop.github.com/)
 
-Utils created for Shell
+Utils created for Shell.
+
+Every script will be include one time: [`#pragma once`](https://stackoverflow.com/a/58510109/7295428)
 
 ## utils.sh
 
