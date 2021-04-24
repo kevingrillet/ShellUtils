@@ -103,6 +103,24 @@ function sRGBEuclideanDistanceRedmean() {
 # time sRGBEuclideanDistanceRedmean ffff00 0000ff # output: 721
 # time sRGBEuclideanDistanceRedmean 000000 ffffff # output: 721
 
+# sRGBExtractColor <COLOR> <R/G/B>
+function sRGBExtractColor() {
+    color=$1
+    ext=$2
+    case $ext in
+        r|R)
+            echo ${color:0:2}
+            ;;
+        g|G)
+            echo ${color:2:2}
+            ;;
+        b|B)
+            echo ${color:4:2}
+            ;;
+    esac
+}
+# sRGBExtractColor 00ff00 G # output: ff
+
 ##
  # sRGB Luminance
  # https://stackoverflow.com/a/596243/7295428
