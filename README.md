@@ -19,8 +19,8 @@ Require `$VERBOSE` equal `true` or `false`
 ## utils_colors.sh
 
 ```sh
-# colorDistance <COLOR1> <COLOR2>
-# hexColorDelta <COLOR1> <COLOR2>
+# sRGBColorDelta <COLOR1> <COLOR2>
+# sRGBColorDistance <COLOR1> <COLOR2>
 # sRGBEuclideanDistance <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>
