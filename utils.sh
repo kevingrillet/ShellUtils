@@ -2,7 +2,7 @@
 # https://www.shellcheck.net/
 
 # my_exec <COMMAND>
-# just to hide the output if verbose if off
+# hide the output if verbose is false
 function my_exec {
   if [ $VERBOSE = true ] ;
   then
@@ -19,7 +19,7 @@ function pause {
 }
 
 # printVerbose <MESSAGE>
-# echo if verbose
+# print if verbose
 function printVerbose {
   if [ $VERBOSE = true ] ;
   then

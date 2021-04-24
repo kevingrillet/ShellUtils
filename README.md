@@ -1,5 +1,6 @@
 # ShellUtils
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?logo=gnu)](https://www.gnu.org/licenses/gpl-3.0)
 [![Windows 10](https://img.shields.io/badge/Windows-10-blue?logo=Windows)](https://www.microsoft.com/)
 [![Git Bash](https://img.shields.io/badge/Git%20Bash-git--bash.exe-orange?logo=GitHub)](https://desktop.github.com/)
 
