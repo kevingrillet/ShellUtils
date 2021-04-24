@@ -4,11 +4,21 @@
 [ -n "${UTILS_MATHS}" ] && return; UTILS_MATHS=0; #pragma once
 
 # abs <VALUE>
+# https://stackoverflow.com/a/47240327/7295428
 function abs() {
     value=$1
     echo $((${value#-}))
 }
 # abs -1
+
+# convertHexToDec <VALUE>
+# https://stackoverflow.com/a/22863296/7295428
+function convertHexToDec() {
+    value=$1
+    echo $((0x${value}))
+    # echo $((16#value))
+}
+# convertHexToDec 14 # output: 20
 
 # pow <BASE> <EXPONENT>
 function pow() {
