@@ -26,6 +26,7 @@ Require `$VERBOSE` equal `true` or `false`
 # sRGBEuclideanDistance <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>
 # sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>
+# sRGBExtractColor <COLOR> <R/G/B>
 # sRGBLuminance <COLOR>
 # sRGBLuminanceW3 <COLOR>
 # sRGBLuminanceHSP <COLOR>
@@ -44,6 +45,7 @@ Require `utils_maths.sh`
 
 ```sh
 # abs <VALUE>
+# convertHexToDec <VALUE>
 # pow <BASE> <EXPONENT>
 # randomInt
 # randomIntRange <LOWER> <UPPER>
