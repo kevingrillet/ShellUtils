@@ -1,5 +1,5 @@
 #!/bin/bash
-# .experiment/exp_getopts.sh
+# ./.experiments/exp_getopts.sh
 # http://mywiki.wooledge.org/BashFAQ/035#getopts
 # https://stackoverflow.com/a/30026641/7295428
 
