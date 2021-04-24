@@ -6,27 +6,27 @@
 # abs <VALUE>
 # https://stackoverflow.com/a/47240327/7295428
 function abs() {
+    if [ "$#" -ne 1 ] ; then echo "Usage: abs <VALUE>" >&2; return 1; fi
     value=$1
     echo $((${value#-}))
 }
-# abs -1
 
 # convertHexToDec <VALUE>
 # https://stackoverflow.com/a/22863296/7295428
 function convertHexToDec() {
+    if [ "$#" -ne 1 ] ; then echo "Usage: convertHexToDec <VALUE>" >&2; return 1; fi
     value=$1
     echo $((0x${value}))
     # echo $((16#value))
 }
-# convertHexToDec 14 # output: 20
 
 # pow <BASE> <EXPONENT>
 function pow() {
+    if [ "$#" -ne 2 ] ; then echo "Usage: pow <BASE> <EXPONENT>" >&2; return 1; fi
     base=$1
     exponent=$2
     echo $((base**exponent))
 }
-# pow 10 2
 
 # randomInt
 # https://blog.eduonix.com/shell-scripting/generating-random-numbers-in-linux-shell-scripting/
@@ -34,20 +34,20 @@ function randomInt() {
     rand=$$
     echo $((rand))
 }
-# randomInt
 
 # randomIntRange <LOWER> <UPPER>
 # https://blog.eduonix.com/shell-scripting/generating-random-numbers-in-linux-shell-scripting/
 function randomIntRange() {
+    if [ "$#" -ne 2 ] ; then echo "Usage: randomIntRange <LOWER> <UPPER>" >&2; return 1; fi
     rand=$$
     diff=$(($2 - $1 + 1))
     echo $((rand%diff + $1))
 }
-# randomIntRange 256 1024
 
 # sqrt <VALUE>
 # https://stackoverflow.com/a/59263103/7295428
 function sqrt() {
+    if [ "$#" -ne 1 ] ; then echo "Usage: sqrt <VALUE>" >&2; return 1; fi
     divider=0
     while true; do
         divider=$((divider + 1))
@@ -56,12 +56,11 @@ function sqrt() {
     done
     echo $sqrt
 }
-# sqrt 100 # output: 10
 
 # toPercent <VALUE> <MAX>
 function toPercent() {
+    if [ "$#" -ne 2 ] ; then echo "Usage: toPercent <VALUE> <MAX>" >&2; return 1; fi
     value=$1
     max=$2
     echo $((value * 100 / max))
 }
-# toPercent 510 721

@@ -9,15 +9,16 @@ VERBOSE=false
 # execDebug <COMMAND>
 # exec if DEBUG=true
 function execDebug() {
+    if [ "$#" -le 1 ] ; then echo "Usage: execDebug <COMMAND>" >&2; return 1; fi
     if [ $DEBUG = true ]; then
         "$@"
     fi
 }
-# source utils_stdout_with_colors.sh; execDebug printWarn "test"
 
 # execVerbose <COMMAND>
 # hide the output if VERBOSE=false
 function execVerbose() {
+    if [ "$#" -le 1 ] ; then echo "Usage: execVerbose <COMMAND>" >&2; return 1; fi
     if [ $VERBOSE = true ]; then
         "$@"
     else
@@ -34,6 +35,7 @@ function pause() {
 # printVerbose <MESSAGE>
 # print if verbose
 function printVerbose() {
+    if [ "$#" -ne 1 ] ; then echo "Usage: printVerbose <MESSAGE>" >&2; return 1; fi
     if [ $VERBOSE = true ]; then
         echo -e "$1"
     fi
