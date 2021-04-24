@@ -43,6 +43,10 @@ Require `utils_maths.sh`
 ## utils_maths.sh
 
 ```sh
+# abs <VALUE>
+# pow <BASE> <EXPONENT>
+# randomInt
+# randomIntRange <LOWER> <UPPER>
 # sqrt <VALUE>
 ```
 
