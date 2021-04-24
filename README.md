@@ -8,6 +8,8 @@ Utils created for Shell.
 
 Every script will be include one time: [`#pragma once`](https://stackoverflow.com/a/58510109/7295428)
 
+Examples can be found in `.example`
+
 ## utils.sh
 
 ```shell
