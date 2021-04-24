@@ -36,6 +36,11 @@ function hexColorDelta() {
 # time hexColorDelta ffff00 0000ff # output: 0      => opposite = 0%
 # time hexColorDelta 000000 ffffff # output: 0      => opposite = 0%
 
+##
+ # sRGB Euclidean Distance
+ # https://www.compuphase.com/cmetric.htm
+ ##
+
 # sRGBEuclideanDistance <COLOR1> <COLOR2>
 # https://www.compuphase.com/cmetric.htm
 # 441 means opposit colors, 0 means same colors
@@ -95,3 +100,60 @@ function sRGBEuclideanDistanceRedmean() {
 # time sRGBEuclideanDistanceRedmean ffff00 ff00ff # output: 624
 # time sRGBEuclideanDistanceRedmean ffff00 0000ff # output: 721
 # time sRGBEuclideanDistanceRedmean 000000 ffffff # output: 721
+
+##
+ # sRGB Luminance
+ # https://stackoverflow.com/a/596243/7295428
+ ##
+
+# sRGBLuminance <COLOR>
+# https://en.wikipedia.org/wiki/Relative_luminance
+# 255 means light, 0 means dark
+function sRGBLuminance() {
+    color=$1
+    r=$((0x${color:0:2}))
+    g=$((0x${color:2:2}))
+    b=$((0x${color:4:2}))
+    l=$(((2126 * r + 7152 * g + 722 * b) / 10000))
+    echo $l
+}
+# time sRGBLuminance 000000 # output: 0
+# time sRGBLuminance ff0000 # output: 54
+# time sRGBLuminance 00ff00 # output: 182
+# time sRGBLuminance 0000ff # output: 18
+# time sRGBLuminance ffffff # output: 255
+
+# sRGBLuminanceW3 <COLOR>
+# https://www.w3.org/TR/AERT/#color-contrast
+# 255 means light, 0 means dark
+function sRGBLuminanceW3() {
+    color=$1
+    r=$((0x${color:0:2}))
+    g=$((0x${color:2:2}))
+    b=$((0x${color:4:2}))
+    l=$(((299 * r + 587 * g + 114 * b) / 1000))
+    echo $l
+}
+# time sRGBLuminanceW3 000000 # output: 0
+# time sRGBLuminanceW3 ff0000 # output: 76
+# time sRGBLuminanceW3 00ff00 # output: 149
+# time sRGBLuminanceW3 0000ff # output: 29
+# time sRGBLuminanceW3 ffffff # output: 255
+
+
+# sRGBLuminanceHSP <COLOR>
+# https://alienryderflex.com/hsp.html
+# 255 means light, 0 means dark
+function sRGBLuminanceHSP() {
+    color=$1
+    r=$((0x${color:0:2}))
+    g=$((0x${color:2:2}))
+    b=$((0x${color:4:2}))
+    l=$(((299 * r * r + 587 * g * g + 114 * b * b) / 1000))
+    sqrt $l
+}
+# time sRGBLuminanceHSP 000000 # output: 0
+# time sRGBLuminanceHSP ff0000 # output: 139
+# time sRGBLuminanceHSP 00ff00 # output: 195
+# time sRGBLuminanceHSP 0000ff # output: 86
+# time sRGBLuminanceHSP ffffff # output: 255
