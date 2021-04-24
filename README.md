@@ -10,7 +10,7 @@ Every script will be include one time: [`#pragma once`](https://stackoverflow.co
 
 Examples can be found in `.example`
 
-## utils.sh
+## [utils.sh](./utils/utils.sh)
 
 ```shell
 # execDebug <COMMAND>
@@ -23,7 +23,7 @@ Require `$DEBUG` equal `true` or `false`
 
 Require `$VERBOSE` equal `true` or `false`
 
-## utils_colors.sh
+## [utils_colors.sh](./utils/utils_colors.sh)
 
 ```shell
 # sRGBColorDelta <COLOR1> <COLOR2>
@@ -39,14 +39,14 @@ Require `$VERBOSE` equal `true` or `false`
 
 Require `utils_maths.sh`
 
-## utils_git.sh
+## [utils_git.sh](./utils/utils_git.sh)
 
 ```shell
 # get_latest_release <USER/REPO>
 # get_latest_version <USER/REPO> <BRANCH> <FOLDER/FILE>
 ```
 
-## utils_maths.sh
+## [utils_maths.sh](./utils/utils_maths.sh)
 
 ```shell
 # abs <VALUE>
@@ -57,11 +57,11 @@ Require `utils_maths.sh`
 # sqrt <VALUE>
 ```
 
-## utils_stdout_colors.sh
+## [utils_stdout_colors.sh](./utils/utils_stdout_colors.sh)
 
 Bunch of constants colors for a prettier output.
 
-## utils_stdout_with_colors.sh
+## [utils_stdout_with_colors.sh](./utils/utils_stdout_with_colors.sh)
 
 ```shell
 # printDebug <MESSAGE>

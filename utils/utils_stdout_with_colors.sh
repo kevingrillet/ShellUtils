@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils_stdout_with_colors.sh
+# ./utils/utils_stdout_with_colors.sh
 # https://www.shellcheck.net/
 [ -n "${UTILS_STDOUT_WITH_COLORS}" ] && return; UTILS_STDOUT_WITH_COLORS=0; #pragma once
 

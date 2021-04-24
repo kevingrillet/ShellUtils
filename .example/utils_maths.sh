@@ -1,7 +1,7 @@
 #!/bin/bash
-# .example/utils_maths.sh
+# ./.example/utils_maths.sh
 # https://www.shellcheck.net/
-source ../utils_maths.sh
+source ../utils/utils_maths.sh
 
 abs
 abs -1

@@ -1,9 +1,9 @@
 #!/bin/bash
-# .example/utils.sh
+# ./.example/utils.sh
 # https://www.shellcheck.net/
-source ../utils.sh
-source ../utils_stdout_colors.sh;
-source ../utils_stdout_with_colors.sh
+source ../utils/utils.sh
+source ../utils/utils_stdout_colors.sh;
+source ../utils/utils_stdout_with_colors.sh
 
 execDebug
 DEBUG=true

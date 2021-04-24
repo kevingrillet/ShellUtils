@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils_colors.sh
+# ./utils/utils_colors.sh
 # https://www.shellcheck.net/
 [ -n "${UTILS_COLORS}" ] && return; UTILS_COLORS=0; #pragma once
 

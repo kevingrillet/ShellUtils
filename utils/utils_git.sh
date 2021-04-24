@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils_git.sh
+# ./utils/utils_git.sh
 # https://www.shellcheck.net/
 [ -n "${UTILS_GIT}" ] && return; UTILS_GIT=0; #pragma once
 

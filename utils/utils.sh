@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils.sh
+# ./utils/utils.sh
 # https://www.shellcheck.net/
 [ -n "${UTILS}" ] && return; UTILS=0; #pragma once
 

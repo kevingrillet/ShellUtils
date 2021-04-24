@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils_maths.sh
+# ./utils/utils_maths.sh
 # https://www.shellcheck.net/
 [ -n "${UTILS_MATHS}" ] && return; UTILS_MATHS=0; #pragma once
 

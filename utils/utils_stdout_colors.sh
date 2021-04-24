@@ -1,5 +1,5 @@
 #!/bin/bash
-# utils_stdout_colors.sh
+# ./utils/utils_stdout_colors.sh
 # https://gist.github.com/vratiu/9780109
 [ -n "${UTILS_STDOUT_COLORS}" ] && return; UTILS_STDOUT_COLORS=0; #pragma once
 
