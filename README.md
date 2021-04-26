@@ -19,9 +19,7 @@ Examples can be found in `.examples`
 # printVerbose <MESSAGE>
 ```
 
-Require `$DEBUG` equal `true` or `false`
-
-Require `$VERBOSE` equal `true` or `false`
+Require `DEBUG` and `VERBOSE` as integer (default: `0`)
 
 ## [utils_colors.sh](./utils/utils_colors.sh)
 
