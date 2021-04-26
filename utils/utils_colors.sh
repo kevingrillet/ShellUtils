@@ -12,11 +12,9 @@ function sRGBColorDelta() {
         echo " 0 means opposit colors, 100 means same colors" >&2
         return 1
     fi
-    color1=$1
-    color2=$2
-    r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    b=$((0x${color1:4:2} - 0x${color2:4:2}))
+    r=$((0x${1:0:2} - 0x${2:0:2}))
+    g=$((0x${1:2:2} - 0x${2:2:2}))
+    b=$((0x${1:4:2} - 0x${2:4:2}))
     d=$(((((3 * 255) - (${r#-} + ${g#-} + ${b#-})) * 100) / (3 * 255)))
     echo $d
 }
@@ -30,12 +28,10 @@ function sRGBColorDistance() {
         echo " 6468 means opposit colors, 0 means same colors" >&2
         return 1
     fi
-    color1=$1
-    color2=$2
-    rmean=$(((0x${color1:0:2} + 0x${color2:0:2}) / 2))
-    r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    b=$((0x${color1:4:2} - 0x${color2:4:2}))
+    rmean=$(((0x${1:0:2} + 0x${2:0:2}) / 2))
+    r=$((0x${1:0:2} - 0x${2:0:2}))
+    g=$((0x${1:2:2} - 0x${2:2:2}))
+    b=$((0x${1:4:2} - 0x${2:4:2}))
     d=$(((((512 + rmean) * r * r) / 2) + 4 * g * g + (((767 - rmean) * b * b) / 2)))
     sqrt $d
 }
@@ -54,11 +50,9 @@ function sRGBEuclideanDistance() {
         echo " 441 means opposit colors, 0 means same colors" >&2
         return 1
     fi
-    color1=$1
-    color2=$2
-    r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    b=$((0x${color1:4:2} - 0x${color2:4:2}))
+    r=$((0x${1:0:2} - 0x${2:0:2}))
+    g=$((0x${1:2:2} - 0x${2:2:2}))
+    b=$((0x${1:4:2} - 0x${2:4:2}))
     d=$((r * r + g * g + b * b))
     sqrt $d
 }
@@ -72,12 +66,10 @@ function sRGBEuclideanDistanceWeighted() {
         echo " 765 means opposit colors, 0 means same colors" >&2
         return 1
     fi
-    color1=$1
-    color2=$2
-    rmean=$(((0x${color1:0:2} + 0x${color2:0:2}) / 2))
-    r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    b=$((0x${color1:4:2} - 0x${color2:4:2}))
+    rmean=$(((0x${1:0:2} + 0x${2:0:2}) / 2))
+    r=$((0x${1:0:2} - 0x${2:0:2}))
+    g=$((0x${1:2:2} - 0x${2:2:2}))
+    b=$((0x${1:4:2} - 0x${2:4:2}))
     if [[ $rmean -lt 128 ]]; then
         d=$((2 * r * r + 4 * g * g + 3 * b * b))
     else
@@ -96,12 +88,10 @@ function sRGBEuclideanDistanceRedmean() {
         echo " 721 means opposit colors, 0 means same colors" >&2
         return 1
     fi
-    color1=$1
-    color2=$2
-    rmean=$(((0x${color1:0:2} + 0x${color2:0:2}) / 2))
-    r=$((0x${color1:0:2} - 0x${color2:0:2}))
-    g=$((0x${color1:2:2} - 0x${color2:2:2}))
-    b=$((0x${color1:4:2} - 0x${color2:4:2}))
+    rmean=$(((0x${1:0:2} + 0x${2:0:2}) / 2))
+    r=$((0x${1:0:2} - 0x${2:0:2}))
+    g=$((0x${1:2:2} - 0x${2:2:2}))
+    b=$((0x${1:4:2} - 0x${2:4:2}))
     d=$(((2 + rmean / 256) * r * r + 4 * g * g + (2 + (255 - rmean) / 256) * b * b))
     sqrt $d
 }
@@ -109,17 +99,15 @@ function sRGBEuclideanDistanceRedmean() {
 # sRGBExtractColor <COLOR> <R/G/B>
 function sRGBExtractColor() {
     if [ "$#" -ne 2 ]; then echo "Usage: sRGBExtractColor <COLOR> <R/G/B>" >&2; return 1; fi
-    color=$1
-    ext=$2
-    case $ext in
+    case $2 in
         r|R)
-            echo ${color:0:2}
+            echo ${1:0:2}
             ;;
         g|G)
-            echo ${color:2:2}
+            echo ${1:2:2}
             ;;
         b|B)
-            echo ${color:4:2}
+            echo ${1:4:2}
             ;;
     esac
 }
@@ -138,10 +126,9 @@ function sRGBLuminance() {
         echo " 255 means light, 0 means dark" >&2
         return 1
     fi
-    color=$1
-    r=$((0x${color:0:2}))
-    g=$((0x${color:2:2}))
-    b=$((0x${color:4:2}))
+    r=$((0x${1:0:2}))
+    g=$((0x${1:2:2}))
+    b=$((0x${1:4:2}))
     l=$(((2126 * r + 7152 * g + 722 * b) / 10000))
     echo $l
 }
@@ -155,10 +142,9 @@ function sRGBLuminanceW3() {
         echo " 255 means light, 0 means dark" >&2
         return 1
     fi
-    color=$1
-    r=$((0x${color:0:2}))
-    g=$((0x${color:2:2}))
-    b=$((0x${color:4:2}))
+    r=$((0x${1:0:2}))
+    g=$((0x${1:2:2}))
+    b=$((0x${1:4:2}))
     l=$(((299 * r + 587 * g + 114 * b) / 1000))
     echo $l
 }
@@ -172,10 +158,9 @@ function sRGBLuminanceHSP() {
         echo " 255 means light, 0 means dark" >&2
         return 1
     fi
-    color=$1
-    r=$((0x${color:0:2}))
-    g=$((0x${color:2:2}))
-    b=$((0x${color:4:2}))
+    r=$((0x${1:0:2}))
+    g=$((0x${1:2:2}))
+    b=$((0x${1:4:2}))
     l=$(((299 * r * r + 587 * g * g + 114 * b * b) / 1000))
     sqrt $l
 }
