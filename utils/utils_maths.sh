@@ -7,25 +7,21 @@
 # https://stackoverflow.com/a/47240327/7295428
 function abs() {
     if [ "$#" -ne 1 ] ; then echo "Usage: abs <VALUE>" >&2; return 1; fi
-    value=$1
-    echo $((${value#-}))
+    echo $((${1#-}))
 }
 
 # convertHexToDec <VALUE>
 # https://stackoverflow.com/a/22863296/7295428
 function convertHexToDec() {
     if [ "$#" -ne 1 ] ; then echo "Usage: convertHexToDec <VALUE>" >&2; return 1; fi
-    value=$1
-    echo $((0x${value}))
+    echo $((0x${1}))
     # echo $((16#value))
 }
 
 # pow <BASE> <EXPONENT>
 function pow() {
     if [ "$#" -ne 2 ] ; then echo "Usage: pow <BASE> <EXPONENT>" >&2; return 1; fi
-    base=$1
-    exponent=$2
-    echo $((base**exponent))
+    echo $(($1**$2))
 }
 
 # randomInt
@@ -60,7 +56,5 @@ function sqrt() {
 # toPercent <VALUE> <MAX>
 function toPercent() {
     if [ "$#" -ne 2 ] ; then echo "Usage: toPercent <VALUE> <MAX>" >&2; return 1; fi
-    value=$1
-    max=$2
-    echo $((value * 100 / max))
+    echo $(($1 * 100 / $2))
 }
