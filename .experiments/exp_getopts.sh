@@ -50,3 +50,5 @@ while getopts ":hvo:" opt; do
             ;;
     esac
 done
+
+echo "test" > "$output_file"
