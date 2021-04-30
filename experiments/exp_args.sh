@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./.experiments/exp_args.sh
+# ./experiments/exp_args.sh
 
 echo "$*"
 

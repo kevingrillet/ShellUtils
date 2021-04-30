@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./.examples/utils.sh
+# ./examples/utils.sh
 # https://www.shellcheck.net/
 source ../utils/utils.sh
 source ../utils/utils_stdout_colors.sh;

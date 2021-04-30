@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./.examples/utils_maths.sh
+# ./examples/utils_maths.sh
 # https://www.shellcheck.net/
 source ../utils/utils_maths.sh
 

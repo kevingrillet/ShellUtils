@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./.experiments/exp_getopts.sh
+# ./experiments/exp_getopts.sh
 # http://mywiki.wooledge.org/BashFAQ/035#getopts
 # https://stackoverflow.com/a/30026641/7295428
 
@@ -51,4 +51,28 @@ while getopts ":hvo:" opt; do
     esac
 done
 
-echo "test" > "$output_file"
+if [ $verbose -ge 1 ]; then echo "Test verbose"; fi
+if [ ! -z $output_file ]; then echo "Test output" > "$output_file"; fi
+
+# $ ./exp_getopts.sh -h
+# Usage: exp_getopts.sh [-hv] [-f OUTFILE]
+#     -h|--help     display this help and exit
+#     -o OUTFILE    write the result to OUTFILE instead of standard output.
+#     -v            verbose mode. Can be used multiple times for increased verbosity.
+
+# $ ./exp_getopts.sh --help
+# Usage: exp_getopts.sh [-hv] [-f OUTFILE]
+#     -h|--help     display this help and exit
+#     -o OUTFILE    write the result to OUTFILE instead of standard output.
+#     -v            verbose mode. Can be used multiple times for increased verbosity.
+
+# $ ./exp_getopts.sh -x
+# x : Invalid option
+
+# $ ./exp_getopts.sh -o
+# Argument required by this option: o
+
+# $ ./exp_getopts.sh -v
+# Test verbose
+
+# $ ./exp_getopts.sh -o test

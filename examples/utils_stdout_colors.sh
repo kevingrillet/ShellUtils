@@ -1,5 +1,5 @@
 #!/bin/bash
-# ./.examples/utils_stdout_colors.sh
+# ./examples/utils_stdout_colors.sh
 # Just for tests, should not be include.
 source ../utils/utils_stdout_colors.sh
 
