@@ -5,10 +5,10 @@ source ../utils/utils_maths.sh
 source ../utils/utils_colors.sh
 
 sRGBColorDelta
-sRGBColorDelta 000000 000000                    # output: 100    => same color = 100%
-sRGBColorDelta ff0000 0000ff                    # output: 33     => G = 0 in both so 33%
-sRGBColorDelta ffff00 0000ff                    # output: 0      => opposite = 0%
-sRGBColorDelta 000000 ffffff                    # output: 0      => opposite = 0%
+sRGBColorDelta 000000 000000                    # output: 0
+sRGBColorDelta ff0000 0000ff                    # output: 67
+sRGBColorDelta ffff00 0000ff                    # output: 100
+sRGBColorDelta 000000 ffffff                    # output: 100
 
 sRGBColorDistance
 sRGBColorDistance 000000 000000                 # output: 0
