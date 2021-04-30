@@ -44,6 +44,14 @@ Require [`utils_maths.sh`](./utils/utils_maths.sh)
 # get_latest_version <USER/REPO> <BRANCH> <FOLDER/FILE>
 ```
 
+## [utils_ini.sh](./utils/utils_ini.sh)
+
+```shell
+# getIniValue <FILE> <SECTION> <PARAM> <DEFAULT>
+# getIniValueLight <FILE> <PARAM>
+# setIniValue <FILE> <SECTION> <PARAM> <VALUE>
+```
+
 ## [utils_maths.sh](./utils/utils_maths.sh)
 
 ```shell
