@@ -5,11 +5,11 @@
 
 # sRGBColorDelta <COLOR1> <COLOR2>
 # https://stackoverflow.com/a/22692625/7295428
-# 0 means same colors, 100 means opposit colors
+# 0 means same colors, 100 means opposite colors
 sRGBColorDelta() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBColorDelta <COLOR1> <COLOR2>" >&2
-        echo " 0 means same colors, 100 means opposit colors" >&2
+        echo " 0 means same colors, 100 means opposite colors" >&2
         return 1
     fi
     r=$((0x${1:0:2} - 0x${2:0:2}))
