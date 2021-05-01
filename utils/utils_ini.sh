@@ -24,6 +24,8 @@ getIniValue() {
                 fi
             fi
         done < "$1"                                                             # Read file
+    else
+        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
     fi
     echo "${_getIniValue_value:-$4}"
 }
@@ -42,18 +44,24 @@ getIniValueLight() {
                 fi
             fi
         done < "$1"                                                             # Read file
+    else
+        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
     fi
 }
 
 # getIniValueLighter <FILE> <PARAM>
 # Output the param matching
-# Warning: the ini file need to don't have any [section]
+# Warning: the ini file needs to don't have any [section]
 # stdout result
 getIniValueLighter() {
     if [ "$#" -ne 2 ] ; then echo "Usage: getIniValueLighter <FILE> <PARAM>" >&2; return 1; fi
-    . "$1"                                      # Add as source the .ini file
-    echo "${!2}"                                # Echo the param (Substring expansion)
-    # eval "echo \"\$$2\""                      # Alternative if the previous one does not work
+    if [ -f "$1" ]; then                        # File exists
+        . "$1"                                  # Add as source the .ini file
+        echo "${!2}"                            # Echo the param (Substring expansion)
+        # eval "echo \"\$$2\""                  # Alternative if the previous one does not work
+    else
+        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
+    fi
 }
 
 # setIniValue <FILE> <SECTION> <PARAM> <VALUE>
