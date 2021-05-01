@@ -4,7 +4,7 @@
 # https://stackoverflow.com/a/30026641/7295428
 
 # Usage info
-function show_help() {
+show_help() {
     echo "Usage: ${0##*/} [-hv] [-f OUTFILE]"
     echo "    -h|--help     display this help and exit"
     echo "    -o OUTFILE    write the result to OUTFILE instead of standard output."
@@ -52,7 +52,7 @@ while getopts ":hvo:" opt; do
 done
 
 if [ $verbose -ge 1 ]; then echo "Test verbose"; fi
-if [ ! -z $output_file ]; then echo "Test output" > "$output_file"; fi
+if [ -n "$output_file" ]; then echo "Test output" > "$output_file"; fi
 
 # $ ./exp_getopts.sh -h
 # Usage: exp_getopts.sh [-hv] [-f OUTFILE]
