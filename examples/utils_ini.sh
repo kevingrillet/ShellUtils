@@ -9,9 +9,11 @@ getIniValue example.ini section3 param1 "default"                               
 
 getIniValueLight
 getIniValueLight example.ini param1                                             # output: test11
+getIniValueLight example.ini param5 "default"                                   # output: default
 
 getIniValueLighter
 getIniValueLighter example_lighter.ini param2                                   # output: test2
+getIniValueLighter example_lighter.ini param5 "default"                         # output: default
 
 setIniValue
 setIniValue example2.ini section21 param1 "test211"

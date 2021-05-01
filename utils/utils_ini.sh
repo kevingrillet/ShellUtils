@@ -25,42 +25,54 @@ getIniValue() {
             fi
         done < "$1"                                                             # Read file
     else
-        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
+        echo "[WARNING] The file [$1] does not exist." >&2;
     fi
     echo "${_getIniValue_value:-$4}"
 }
 
-# getIniValueLight <FILE> <PARAM>
+# getIniValueLight <FILE> <PARAM> [<DEFAULT>]
 # Output the first param matching ignoring the section
 # stdout result
 getIniValueLight() {
-    if [ "$#" -ne 2 ] ; then echo "Usage: getIniValueLight <FILE> <PARAM>" >&2; return 1; fi
+    if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
+        echo "Usage: getIniValueLight <FILE> <PARAM> [<DEFAULT>]" >&2; return 1;
+    fi
+    _getIniValueLight_value=""
     if [ -f "$1" ]; then                                                        # File exists
         while read -r line; do
             if [[ "$line" =~ ^(.*)=(.*)$ ]]; then                               # Match param=key
                 if [ "$2" = "${BASH_REMATCH[1]}" ]; then
-                    echo "${BASH_REMATCH[2]}"
+                    _getIniValueLight_value="${BASH_REMATCH[2]}"
                     break                                                       # Break while
                 fi
             fi
         done < "$1"                                                             # Read file
+        echo "${_getIniValueLight_value:-$3}"
     else
-        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
+        echo "[WARNING] The file [$1] does not exist." >&2;
+        echo "$3"                               # Echo DEFAULT
     fi
 }
 
-# getIniValueLighter <FILE> <PARAM>
+# getIniValueLighter <FILE> <PARAM> [<DEFAULT>]
 # Output the param matching
 # Warning: the ini file needs to don't have any [section]
 # stdout result
 getIniValueLighter() {
-    if [ "$#" -ne 2 ] ; then echo "Usage: getIniValueLighter <FILE> <PARAM>" >&2; return 1; fi
+    if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
+        echo "Usage: getIniValueLighter <FILE> <PARAM> [<DEFAULT>]" >&2; return 1;
+    fi
     if [ -f "$1" ]; then                        # File exists
         . "$1"                                  # Add as source the .ini file
-        echo "${!2}"                            # Echo the param (Substring expansion)
-        # eval "echo \"\$$2\""                  # Alternative if the previous one does not work
+        # eval "echo \"\$$2\""                  # Alternative if ${!2} does not work
+        if [ -n "${!2}" ]; then
+            echo "${!2}"                        # Echo the param (Substring expansion)
+        else
+            echo "$3"
+        fi
     else
-        echo "[ERROR] The file [$1] does not exist." >&2; return 1;
+        echo "[WARNING] The file [$1] does not exist." >&2;
+        echo "$3"                               # Echo DEFAULT
     fi
 }
 
