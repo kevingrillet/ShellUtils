@@ -3,12 +3,16 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?logo=gnu)](https://www.gnu.org/licenses/gpl-3.0)
 [![Windows 10](https://img.shields.io/badge/Windows-10-blue?logo=Windows)](https://www.microsoft.com/)
 [![Git Bash](https://img.shields.io/badge/Git%20Bash-git--bash.exe-orange?logo=GitHub)](https://desktop.github.com/)
+[![macOS](https://img.shields.io/badge/macOS-Catalina-white?logo=macOS)](https://www.microsoft.com/)
+[![Bash](https://img.shields.io/badge/Bash-v3.2.57-black?logo=Windows-Terminal)](https://desktop.github.com/)
 
-Utils created for Shell.
+Utils created for Shell. My objective is to have utils running on my PC with `Git Bash` and on my Mac with this [older version](https://itnext.io/upgrading-bash-on-macos-7138bd1066ba) of `Bash`.
 
-Every script will be include one time: [`#pragma once`](https://stackoverflow.com/a/58510109/7295428)
+Every script will be include one time: [`#pragma once`](https://stackoverflow.com/a/58510109/7295428).
 
-Examples can be found in `examples`
+Examples can be found in `examples` folder.
+
+You can also find some `experiments` on more precise shell things.
 
 ## [utils.sh](./utils/utils.sh)
 
@@ -19,7 +23,7 @@ Examples can be found in `examples`
 # printVerbose <MESSAGE>
 ```
 
-Require `DEBUG` and `VERBOSE` as integer (default: `0`)
+Require `DEBUG` and `VERBOSE` as integer (default: `0`).
 
 ## [utils_colors.sh](./utils/utils_colors.sh)
 
@@ -35,7 +39,7 @@ Require `DEBUG` and `VERBOSE` as integer (default: `0`)
 # sRGBLuminanceHSP <COLOR>
 ```
 
-Require [`utils_maths.sh`](./utils/utils_maths.sh)
+Require [`utils_maths.sh`](./utils/utils_maths.sh).
 
 ## [utils_git.sh](./utils/utils_git.sh)
 
@@ -80,4 +84,4 @@ Bunch of constants colors for a prettier output.
 # printWarn <MESSAGE>
 ```
 
-Require [`utils_stdout_colors.sh`](./utils/utils_stdout_colors.sh)
+Require [`utils_stdout_colors.sh`](./utils/utils_stdout_colors.sh).
