@@ -1,10 +1,19 @@
 #!/bin/bash
-# ./utils/utils_ini.sh
-# https://www.shellcheck.net/
+# ##############################################################################
+# Script Name   : utils_ini.sh
+# Description   : Common function for shell projects working with .inii files
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# ##############################################################################
+[ -n "${UTILS_INI}" ] && return; UTILS_INI=0; #pragma once
 
-# getIniValue <FILE> <SECTION> <PARAM> [<DEFAULT>]
-# Output the matching section > param
-# stdout result
+# ##############################################################################
+# Function Name : getIniValue
+# Description   : Output the first matching <PARAM>, in the matching <SECTION>
+# Args          : <FILE> <SECTION> <PARAM> [<DEFAULT>]
+# Output        : stdout Value (or <DEFAULT>)
+# ##############################################################################
 getIniValue() {
     if [ "$#" -ne 3 ] && [ "$#" -ne 4 ] ; then
         echo "getIniValue <FILE> <SECTION> <PARAM> [<DEFAULT>]" >&2; return 1;
@@ -27,12 +36,15 @@ getIniValue() {
     else
         echo "[WARNING] The file [$1] does not exist." >&2;
     fi
-    echo "${_getIniValue_value:-$4}"
+    echo "${_getIniValue_value:-$4}" >&1
 }
 
-# getIniValueLight <FILE> <PARAM> [<DEFAULT>]
-# Output the first param matching ignoring the section
-# stdout result
+# ##############################################################################
+# Function Name : getIniValueLight
+# Description   : Output the first matching param
+# Args          : <FILE> <PARAM> [<DEFAULT>]
+# Output        : stdout Value (or <DEFAULT>)
+# ##############################################################################
 getIniValueLight() {
     if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
         echo "Usage: getIniValueLight <FILE> <PARAM> [<DEFAULT>]" >&2; return 1;
@@ -50,14 +62,17 @@ getIniValueLight() {
         echo "${_getIniValueLight_value:-$3}"
     else
         echo "[WARNING] The file [$1] does not exist." >&2;
-        echo "$3"                               # Echo DEFAULT
+        echo "$3" >&1                           # Echo DEFAULT
     fi
 }
 
-# getIniValueLighter <FILE> <PARAM> [<DEFAULT>]
-# Output the param matching
-# Warning: the ini file needs to don't have any [section]
-# stdout result
+# ##############################################################################
+# Function Name : getIniValueLighter
+# Description   : Output the last matching param
+# Note          : Warning: the ini file needs to don't have any [section]
+# Args          : <FILE> <PARAM> [<DEFAULT>]
+# Output        : stdout Value (or <DEFAULT>)
+# ##############################################################################
 getIniValueLighter() {
     if [ "$#" -ne 2 ] && [ "$#" -ne 3 ]; then
         echo "Usage: getIniValueLighter <FILE> <PARAM> [<DEFAULT>]" >&2; return 1;
@@ -66,18 +81,22 @@ getIniValueLighter() {
         . "$1"                                  # Add as source the .ini file
         # eval "echo \"\$$2\""                  # Alternative if ${!2} does not work
         if [ -n "${!2}" ]; then
-            echo "${!2}"                        # Echo the param (Substring expansion)
+            echo "${!2}" >&1                    # Echo the param (Substring expansion)
         else
-            echo "$3"
+            echo "$3" >&1
         fi
     else
         echo "[WARNING] The file [$1] does not exist." >&2;
-        echo "$3"                               # Echo DEFAULT
+        echo "$3" >&1                           # Echo DEFAULT
     fi
 }
 
-# setIniValue <FILE> <SECTION> <PARAM> <VALUE>
-# Insert, Update value
+# ##############################################################################
+# Function Name : setIniValue
+# Description   : Insert/Update <PARAM>=<VALUE> of <FILE>
+# Args          : <FILE> <SECTION> <PARAM> <VALUE>
+# Output        : <FILE> updated
+# ##############################################################################
 setIniValue() {
     if [ "$#" -ne 4 ] ; then echo "Usage: setIniValue <FILE> <SECTION> <PARAM> <VALUE>" >&2; return 1; fi
     _setIniValue_temp=$(mktemp)                 # Create temp file (will be replacing the .ini file)

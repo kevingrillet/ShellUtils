@@ -1,10 +1,20 @@
 #!/bin/bash
-# ./utils/utils_colors_pixels.sh
-# https://www.shellcheck.net/
+# ##############################################################################
+# Script Name   : utils_colors_pixels.sh
+# Description   : Common function for shell projects using pixels
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# ##############################################################################
 [ -n "${UTILS_COLORS_PIXELS}" ] && return; UTILS_COLORS_PIXELS=0; #pragma once
 
-# Not working, need to fix offset...
-# getRGBFromImagePixel <IMAGE> <X> <Y>
+# TODO: it's BROKEN
+# ##############################################################################
+# Function Name : getRGBFromImagePixel
+# Description   : Output RGB of the <IMAGE> pixel <X> <Y>
+# Args          : <IMAGE> <X> <Y>
+# Output        : stdout RGB of the pixel
+# ##############################################################################
 getRGBFromImagePixel() {
     # different file format, different header_offset
     offset=$((image_width * $3 + $2 + header_offset))
@@ -16,5 +26,5 @@ getRGBFromImagePixel() {
     RGB="${RGB// /}"
     rm dd.temp.txt
     rm certutil.temp.txt
-    echo "$RGB"
+    echo "$RGB" >&1
 }

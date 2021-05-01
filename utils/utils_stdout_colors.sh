@@ -1,6 +1,12 @@
 #!/bin/bash
-# ./utils/utils_stdout_colors.sh
-# https://gist.github.com/vratiu/9780109
+# ##############################################################################
+# Script Name   : utils_stdout_colors.sh
+# Description   : Bunch of constants colors for a prettier output
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Source        : https://gist.github.com/vratiu/9780109
+# ##############################################################################
 [ -n "${UTILS_STDOUT_COLORS}" ] && return; UTILS_STDOUT_COLORS=0; #pragma once
 
 # Reset

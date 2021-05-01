@@ -1,11 +1,20 @@
 #!/bin/bash
-# ./utils/utils_colors.sh
-# https://www.shellcheck.net/
+# ##############################################################################
+# Script Name   : utils_colors.sh
+# Description   : Common function for shell projects working with colors
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_maths.sh
+# ##############################################################################
 [ -n "${UTILS_COLORS}" ] && return; UTILS_COLORS=0; #pragma once
 
-# sRGBColorDelta <COLOR1> <COLOR2>
-# https://stackoverflow.com/a/22692625/7295428
-# 0 means same colors, 100 means opposite colors
+# ##############################################################################
+# Function Name : sRGBColorDelta
+# Args          : <COLOR1> <COLOR2>
+# Output        : stdout [0 means same colors, 100 means opposite colors]
+# Source        : https://stackoverflow.com/a/22692625/7295428
+# ##############################################################################
 sRGBColorDelta() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBColorDelta <COLOR1> <COLOR2>" >&2
@@ -17,12 +26,15 @@ sRGBColorDelta() {
     b=$((0x${1:4:2} - 0x${2:4:2}))
     d=$((((765 - (${r#-} + ${g#-} + ${b#-})) * 100) / 765))                     # 765 = 3 * 255
     d=$((100-d))
-    echo $d
+    echo $d >&1
 }
 
-# sRGBColorDistance <COLOR1> <COLOR2>
-# https://stackoverflow.com/a/9085524/7295428
-# 6468 means opposit colors, 0 means same colors
+# ##############################################################################
+# Function Name : sRGBColorDistance
+# Args          : <COLOR1> <COLOR2>
+# Output        : stdout (6468 means opposit colors, 0 means same colors)
+# Source        : https://stackoverflow.com/a/9085524/7295428
+# ##############################################################################
 sRGBColorDistance() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBColorDistance <COLOR1> <COLOR2>" >&2
@@ -37,14 +49,17 @@ sRGBColorDistance() {
     sqrt $d
 }
 
-##
- # sRGB Euclidean Distance
- # https://www.compuphase.com/cmetric.htm
- ##
+# ##############################################################################
+# Section       : sRGB Euclidean Distance
+# Source        : https://www.compuphase.com/cmetric.htm
+# ##############################################################################
 
-# sRGBEuclideanDistance <COLOR1> <COLOR2>
-# https://www.compuphase.com/cmetric.htm
-# 441 means opposit colors, 0 means same colors
+# ##############################################################################
+# Function Name : sRGBEuclideanDistance
+# Args          : <COLOR1> <COLOR2>
+# Output        : stdout (441 means opposit colors, 0 means same colors)
+# Source        : https://www.compuphase.com/cmetric.htm
+# ##############################################################################
 sRGBEuclideanDistance() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBEuclideanDistance <COLOR1> <COLOR2>" >&2
@@ -58,9 +73,12 @@ sRGBEuclideanDistance() {
     sqrt $d
 }
 
-# sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>
-# https://www.compuphase.com/cmetric.htm
-# 765 means opposit colors, 0 means same colors
+# ##############################################################################
+# Function Name : sRGBEuclideanDistanceWeighted
+# Args          : <COLOR1> <COLOR2>
+# Output        : stdout (765 means opposit colors, 0 means same colors)
+# Source        : https://www.compuphase.com/cmetric.htm
+# ##############################################################################
 sRGBEuclideanDistanceWeighted() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBEuclideanDistanceWeighted <COLOR1> <COLOR2>" >&2
@@ -79,10 +97,13 @@ sRGBEuclideanDistanceWeighted() {
     sqrt $d
 }
 
-# sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>
-# A low-cost approximation
-# https://www.compuphase.com/cmetric.htm
-# 721 means opposit colors, 0 means same colors
+# ##############################################################################
+# Function Name : sRGBEuclideanDistanceRedmean
+# Description   : A low-cost approximation
+# Args          : <COLOR1> <COLOR2>
+# Output        : stdout (721 means opposit colors, 0 means same colors)
+# Source        : https://www.compuphase.com/cmetric.htm
+# ##############################################################################
 sRGBEuclideanDistanceRedmean() {
     if [ "$#" -ne 2 ] ; then
         echo "Usage: sRGBEuclideanDistanceRedmean <COLOR1> <COLOR2>" >&2
@@ -97,30 +118,38 @@ sRGBEuclideanDistanceRedmean() {
     sqrt $d
 }
 
-# sRGBExtractColor <COLOR> <R/G/B>
+# ##############################################################################
+# Function Name : sRGBExtractColor
+# Description   : Extract color from RGB
+# Args          : <COLOR> <R/G/B>
+# Output        : stdout
+# ##############################################################################
 sRGBExtractColor() {
     if [ "$#" -ne 2 ]; then echo "Usage: sRGBExtractColor <COLOR> <R/G/B>" >&2; return 1; fi
     case $2 in
         r|R)
-            echo "${1:0:2}"
+            echo "${1:0:2}" >&1
             ;;
         g|G)
-            echo "${1:2:2}"
+            echo "${1:2:2}" >&1
             ;;
         b|B)
-            echo "${1:4:2}"
+            echo "${1:4:2}" >&1
             ;;
     esac
 }
 
-##
- # sRGB Luminance
- # https://stackoverflow.com/a/596243/7295428
- ##
+# ##############################################################################
+# Section       : sRGB Luminance
+# Source        : https://stackoverflow.com/a/596243/7295428
+# ##############################################################################
 
-# sRGBLuminance <COLOR>
-# https://en.wikipedia.org/wiki/Relative_luminance
-# 255 means light, 0 means dark
+# ##############################################################################
+# Function Name : sRGBLuminance
+# Args          : <COLOR>
+# Output        : stdout (255 means light, 0 means dark)
+# Source        : https://en.wikipedia.org/wiki/Relative_luminance
+# ##############################################################################
 sRGBLuminance() {
     if [ "$#" -ne 1 ] ; then
         echo "Usage: sRGBLuminance <COLOR>" >&2
@@ -131,12 +160,15 @@ sRGBLuminance() {
     g=$((0x${1:2:2}))
     b=$((0x${1:4:2}))
     l=$(((2126 * r + 7152 * g + 722 * b) / 10000))
-    echo $l
+    echo $l >&1
 }
 
-# sRGBLuminanceW3 <COLOR>
-# https://www.w3.org/TR/AERT/#color-contrast
-# 255 means light, 0 means dark
+# ##############################################################################
+# Function Name : sRGBLuminanceW3
+# Args          : <COLOR>
+# Output        : stdout (255 means light, 0 means dark)
+# Source        : https://www.w3.org/TR/AERT/#color-contrast
+# ##############################################################################
 sRGBLuminanceW3() {
     if [ "$#" -ne 1 ] ; then
         echo "Usage: sRGBLuminanceW3 <COLOR>" >&2
@@ -147,12 +179,15 @@ sRGBLuminanceW3() {
     g=$((0x${1:2:2}))
     b=$((0x${1:4:2}))
     l=$(((299 * r + 587 * g + 114 * b) / 1000))
-    echo $l
+    echo $l >&1
 }
 
-# sRGBLuminanceHSP <COLOR>
-# https://alienryderflex.com/hsp.html
-# 255 means light, 0 means dark
+# ##############################################################################
+# Function Name : sRGBLuminanceHSP
+# Args          : <COLOR>
+# Output        : stdout (255 means light, 0 means dark)
+# Source        : https://alienryderflex.com/hsp.html
+# ##############################################################################
 sRGBLuminanceHSP() {
     if [ "$#" -ne 1 ] ; then
         echo "Usage: sRGBLuminanceHSP <COLOR>" >&2
