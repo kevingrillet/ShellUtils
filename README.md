@@ -47,8 +47,9 @@ Require [`utils_maths.sh`](./utils/utils_maths.sh)
 ## [utils_ini.sh](./utils/utils_ini.sh)
 
 ```shell
-# getIniValue <FILE> <SECTION> <PARAM> <DEFAULT>
+# getIniValue <FILE> <SECTION> <PARAM> [<DEFAULT>]
 # getIniValueLight <FILE> <PARAM>
+# getIniValueLighter <FILE> <PARAM>
 # setIniValue <FILE> <SECTION> <PARAM> <VALUE>
 ```
 

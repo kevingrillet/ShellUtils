@@ -2,10 +2,13 @@
 # ./utils/utils_ini.sh
 # https://www.shellcheck.net/
 
-# getIniValue <FILE> <SECTION> <PARAM> <DEFAULT>
+# getIniValue <FILE> <SECTION> <PARAM> [<DEFAULT>]
 # Output the matching section > param
 # stdout result
 getIniValue() {
+    if [ "$#" -ne 3 ] && [ "$#" -ne 4 ] ; then
+        echo "getIniValue <FILE> <SECTION> <PARAM> [<DEFAULT>]" >&2; return 1;
+    fi
     _getIniValue_section=""
     _getIniValue_param=""
     _getIniValue_value=""
@@ -29,6 +32,7 @@ getIniValue() {
 # Output the first param matching ignoring the section
 # stdout result
 getIniValueLight() {
+    if [ "$#" -ne 2 ] ; then echo "Usage: getIniValueLight <FILE> <PARAM>" >&2; return 1; fi
     if [ -f "$1" ]; then                                                        # File exists
         while read -r line; do
             if [[ "$line" =~ ^(.*)=(.*)$ ]]; then                               # Match param=key
@@ -41,9 +45,21 @@ getIniValueLight() {
     fi
 }
 
+# getIniValueLighter <FILE> <PARAM>
+# Output the param matching
+# Warning: the ini file need to don't have any [section]
+# stdout result
+getIniValueLighter() {
+    if [ "$#" -ne 2 ] ; then echo "Usage: getIniValueLighter <FILE> <PARAM>" >&2; return 1; fi
+    . "$1"                                      # Add as source the .ini file
+    echo "${!2}"                                # Echo the param (Substring expansion)
+    # eval "echo \"\$$2\""                      # Alternative if the previous one does not work
+}
+
 # setIniValue <FILE> <SECTION> <PARAM> <VALUE>
 # Insert, Update value
 setIniValue() {
+    if [ "$#" -ne 4 ] ; then echo "Usage: setIniValue <FILE> <SECTION> <PARAM> <VALUE>" >&2; return 1; fi
     _setIniValue_temp=$(mktemp)                 # Create temp file (will be replacing the .ini file)
     _setIniValue_section=""
     _setIniValue_param=""
