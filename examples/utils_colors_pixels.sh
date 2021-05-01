@@ -1,7 +1,6 @@
 #!/bin/bash
 # ./examples/utils_colors_pixels.sh
-# https://www.shellcheck.net/
-source ../utils/utils_colors_pixels.sh
+. ../utils/utils_colors_pixels.sh
 
 # Not working
 getRGBFromImagePixel "images/bmp/black.bmp" 16 16

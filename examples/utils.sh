@@ -1,9 +1,8 @@
 #!/bin/bash
 # ./examples/utils.sh
-# https://www.shellcheck.net/
-source ../utils/utils.sh
-source ../utils/utils_stdout_colors.sh;
-source ../utils/utils_stdout_with_colors.sh
+. ../utils/utils.sh
+. ../utils/utils_stdout_colors.sh;
+. ../utils/utils_stdout_with_colors.sh
 
 execDebug
 DEBUG=1; execDebug printDebug "Lorem ipsum dolor sit amet"

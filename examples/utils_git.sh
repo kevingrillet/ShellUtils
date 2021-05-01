@@ -1,7 +1,6 @@
 #!/bin/bash
 # ./examples/utils_git.sh
-# https://www.shellcheck.net/
-source ../utils/utils_git.sh
+. ../utils/utils_git.sh
 
 get_latest_release
 

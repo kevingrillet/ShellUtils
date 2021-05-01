@@ -1,7 +1,6 @@
 #!/bin/bash
 # ./examples/utils_maths.sh
-# https://www.shellcheck.net/
-source ../utils/utils_maths.sh
+. ../utils/utils_maths.sh
 
 abs
 abs -1                                          # output: 1

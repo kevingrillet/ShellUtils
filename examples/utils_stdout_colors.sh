@@ -1,7 +1,7 @@
 #!/bin/bash
 # ./examples/utils_stdout_colors.sh
 # Just for tests, should not be include.
-source ../utils/utils_stdout_colors.sh
+. ../utils/utils_stdout_colors.sh
 
 echo "# Reset"
 echo -e "Color_Off:         ${Color_Off}Lorem ipsum dolor sit amet${Color_Off}"

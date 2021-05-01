@@ -77,7 +77,7 @@ sqrt() {
     while true; do
         divider=$((divider + 1))
         sqrt=$(($1 / divider))
-        if [[ $divider -eq $sqrt ]] || [[ $divider -gt $sqrt ]]; then break; fi
+        if [ $divider -eq $sqrt ] || [ $divider -gt $sqrt ]; then break; fi
     done
     echo $sqrt >&1
 }

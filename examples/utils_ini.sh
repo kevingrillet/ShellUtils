@@ -1,7 +1,6 @@
 #!/bin/bash
 # ./examples/utils_ini.sh
-# https://www.shellcheck.net/
-source ../utils/utils_ini.sh
+. ../utils/utils_ini.sh
 
 getIniValue
 getIniValue example.ini section2 param1 "default"                               # output: test21

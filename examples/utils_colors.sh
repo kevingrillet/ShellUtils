@@ -1,8 +1,7 @@
 #!/bin/bash
 # ./examples/utils_colors.sh
-# https://www.shellcheck.net/
-source ../utils/utils_maths.sh
-source ../utils/utils_colors.sh
+. ../utils/utils_maths.sh
+. ../utils/utils_colors.sh
 
 sRGBColorDelta
 sRGBColorDelta 000000 000000                    # output: 0
