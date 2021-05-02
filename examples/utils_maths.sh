@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils_maths.sh
+# ##############################################################################
+# Script Name   : utils_maths.sh
+# Description   : Demo of utils_maths.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_maths.sh
+# ##############################################################################
 . ../utils/utils_maths.sh
 
 abs

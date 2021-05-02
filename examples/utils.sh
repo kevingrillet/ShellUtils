@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils.sh
+# ##############################################################################
+# Script Name   : utils.sh
+# Description   : Demo of utils.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils.sh, utils_stdout_colors.sh, utils_stdout_with_colors.sh
+# ##############################################################################
 . ../utils/utils.sh
 . ../utils/utils_stdout_colors.sh;
 . ../utils/utils_stdout_with_colors.sh

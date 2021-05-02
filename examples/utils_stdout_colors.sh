@@ -1,6 +1,12 @@
 #!/bin/bash
-# ./examples/utils_stdout_colors.sh
-# Just for tests, should not be include.
+# ##############################################################################
+# Script Name   : utils_stdout_colors.sh
+# Description   : Demo of utils_stdout_colors.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_stdout_colors.sh
+# ##############################################################################
 . ../utils/utils_stdout_colors.sh
 
 echo "# Reset"

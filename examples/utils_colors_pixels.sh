@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils_colors_pixels.sh
+# ##############################################################################
+# Script Name   : utils_colors_pixels.sh
+# Description   : Demo of utils_colors_pixels.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_colors_pixels.sh
+# ##############################################################################
 . ../utils/utils_colors_pixels.sh
 
 # Not working

@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils_stdout_with_colors.sh
+# ##############################################################################
+# Script Name   : utils_stdout_with_colors.sh
+# Description   : Demo of utils_stdout_with_colors.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_stdout_colors.sh, utils_stdout_with_colors.sh
+# ##############################################################################
 . ../utils/utils_stdout_colors.sh
 . ../utils/utils_stdout_with_colors.sh
 

@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils_ini.sh
+# ##############################################################################
+# Script Name   : utils_ini.sh
+# Description   : Demo of utils_ini.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_ini.sh
+# ##############################################################################
 . ../utils/utils_ini.sh
 
 getIniValue

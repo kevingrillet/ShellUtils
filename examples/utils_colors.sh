@@ -1,5 +1,12 @@
 #!/bin/bash
-# ./examples/utils_colors.sh
+# ##############################################################################
+# Script Name   : utils_colors.sh
+# Description   : Demo of utils_colors.sh
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Require       : utils_maths.sh, utils_colors.sh
+# ##############################################################################
 . ../utils/utils_maths.sh
 . ../utils/utils_colors.sh
 
