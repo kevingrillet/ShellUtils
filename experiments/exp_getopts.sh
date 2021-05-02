@@ -1,7 +1,13 @@
 #!/bin/bash
-# ./experiments/exp_getopts.sh
-# http://mywiki.wooledge.org/BashFAQ/035#getopts
-# https://stackoverflow.com/a/30026641/7295428
+# ##############################################################################
+# Script Name   : exp_getopts.sh
+# Description   : Experiment around getopts
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# Source        : http://mywiki.wooledge.org/BashFAQ/035#getopts
+#                 https://stackoverflow.com/a/30026641/7295428
+# ##############################################################################
 
 # Usage info
 show_help() {

@@ -1,5 +1,11 @@
 #!/bin/bash
-# ./experiments/exp_args.sh
+# ##############################################################################
+# Script Name   : exp_args.sh
+# Description   : Experiment around Args
+# Author        : Kevin GRILLET
+# GitHub        : https://github.com/kevingrillet/ShellUtils
+# License       : GNU GPL-3
+# ##############################################################################
 
 echo "$*"
 
