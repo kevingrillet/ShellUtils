@@ -1,17 +1,25 @@
 {
+    // Global > Ruller
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#333"        // rulers color
     },
+    // Global > EOL > LF
+    "files.eol": "\n",
+    // shellscript
     "[shellscript]": {
-        "editor.insertSpaces": true,
+        // Ruller
         "editor.rulers": [
             48,                                 // default comment
             80,                                 // maximum code length, 2nd comment line
             120                                 // maximum line length
         ],
+        // Tab
+        "editor.insertSpaces": true,
         "editor.tabSize": 4,
+        // EOL > LF
         "files.eol": "\n"
     },
+    // Extension - shellcheck > https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
     "shellcheck.customArgs": [
         "-x"                                    // https://github.com/koalaman/shellcheck/wiki/SC1091
     ],
