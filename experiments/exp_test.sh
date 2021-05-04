@@ -24,6 +24,16 @@ testOR() {
 }
 
 # ##############################################################################
+# Function Name : testORbis
+# Description   : Coll test OR minus first arg
+# Args          : <USELESS> <VALUE> [<VALUE>]
+# Output        : return 0/1
+# ##############################################################################
+testORbis() {
+    testOR "${@:2}"
+}
+
+# ##############################################################################
 # Function Name : testNAND
 # Description   : test NAND implementation
 # Args          : <VALUE> [<VALUE>]
@@ -37,6 +47,16 @@ testNAND() {
     return 0;
 }
 
+# ##############################################################################
+# Function Name : testNANDbis
+# Description   : Coll test NAND minus first arg
+# Args          : <USELESS> <VALUE> [<VALUE>]
+# Output        : return 0/1
+# ##############################################################################
+testNANDbis() {
+    testNAND "${@:2}"
+}
+
 echo "Test OR"
 if [ "$var" = 0 ]; then echo "Test 1: OK"; fi                                   # Output:
 if testOR 0; then echo "Test 2: OK"; fi                                         # Output:
@@ -46,6 +66,8 @@ if [ "$var" = 0 ] || [ "$var" = 1 ]; then echo "Test 5: OK"; fi                 
 if testOR 0 1; then echo "Test 6: OK"; fi                                       # Output:
 if [ "$var" = 0 ] || [ "$var" = 5 ]; then echo "Test 7: OK"; fi                 # Output: Ok
 if testOR 0 5; then echo "Test 8: OK"; fi                                       # Output: Ok
+if testORbis Lorem 0 1; then echo "Test 9: OK"; fi                              # Output:
+if testORbis Lorem 0 5; then echo "Test 10: OK"; fi                             # Output: Ok
 
 echo "Test NAND"
 if [ "$var" != 0 ]; then echo "Test 1: OK"; fi                                  # Output: Ok
@@ -56,3 +78,5 @@ if [ "$var" != 0 ] && [ "$var" != 1 ]; then echo "Test 5: OK"; fi               
 if testNAND 0 1; then echo "Test 6: OK"; fi                                     # Output: Ok
 if [ "$var" != 0 ] && [ "$var" != 5 ]; then echo "Test 7: OK"; fi               # Output:
 if testNAND 0 5; then echo "Test 8: OK"; fi                                     # Output:
+if testNANDbis Lorem 0 1; then echo "Test 9: OK"; fi                            # Output: Ok
+if testNANDbis Lorem 0 5; then echo "Test 10: OK"; fi                           # Output:
