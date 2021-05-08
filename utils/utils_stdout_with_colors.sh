@@ -17,7 +17,7 @@
 # ##############################################################################
 printDebug() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printDebug <MESSAGE>" >&2; return 1; fi
-    echo -e "${On_Blue}[DEBUG] $1${Color_Off} " >&1
+    echo -e "${On_Blue}[DEBUG]\t\t$1${Color_Off}" >&1
 }
 
 # ##############################################################################
@@ -28,7 +28,7 @@ printDebug() {
 # ##############################################################################
 printError() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printError <MESSAGE>" >&2; return 1; fi
-    echo -e "${Red}[ERROR]${Color_Off} $1" >&2
+    echo -e "${Red}[ERROR]${Color_Off}\t\t$1" >&2
 }
 
 # ##############################################################################
@@ -39,7 +39,7 @@ printError() {
 # ##############################################################################
 printInfo() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printInfo <MESSAGE>" >&2; return 1; fi
-    echo -e "${Cyan}[INFORMATION]]${Color_Off} $1" >&1
+    echo -e "${Cyan}[INFORMATION]${Color_Off}\t$1" >&1
 }
 
 # ##############################################################################
@@ -50,7 +50,7 @@ printInfo() {
 # ##############################################################################
 printSuccess() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printSuccess <MESSAGE>" >&2; return 1; fi
-    echo -e "${Green}[SUCCESS]${Color_Off} $1" >&1
+    echo -e "${Green}[SUCCESS]${Color_Off}\t$1" >&1
 }
 
 # ##############################################################################
@@ -61,7 +61,7 @@ printSuccess() {
 # ##############################################################################
 printTask() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printTask <MESSAGE>" >&2; return 1; fi
-    echo -e "${Blue}[TASK]${Color_Off} $1" >&1
+    echo -e "${Blue}[TASK]${Color_Off}\t\t$1" >&1
 }
 
 # ##############################################################################
@@ -72,7 +72,7 @@ printTask() {
 # ##############################################################################
 printTip() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printTip <MESSAGE>" >&2; return 1; fi
-    echo -e "${Purple}[TIP]${Color_Off} $1" >&1
+    echo -e "${Purple}[TIP]${Color_Off}\t\t$1" >&1
 }
 
 # ##############################################################################
@@ -83,5 +83,5 @@ printTip() {
 # ##############################################################################
 printWarn() {
     if [ "$#" -ne 1 ] ; then echo "Usage: printWarn <MESSAGE>" >&2; return 1; fi
-    echo -e "${Yellow}[WARNING]${Color_Off} $1" >&2
+    echo -e "${Yellow}[WARNING]${Color_Off}\t$1" >&2
 }
