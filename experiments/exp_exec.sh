@@ -16,3 +16,25 @@ call () {
 }
 
 call
+
+while getopts "ac:h" option; do
+    case $option in
+    a)
+        ;;
+    c)
+        call
+        exit
+        ;;
+    h)
+        echo "./exp_exec.sh -a -c test"
+        ;;
+    :)
+        printWarn "Argument required by this option: $OPTARG"
+        exit 1
+        ;;
+    \?)
+        printError "$OPTARG : Invalid option"
+        exit 1
+        ;;
+    esac
+done
