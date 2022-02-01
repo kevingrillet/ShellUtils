@@ -9,13 +9,14 @@
 
 scr="$0"
 args="$*"
+nargs="$#"
+
+echo "Number of args: $nargs [$scr $args]"
 
 call () {
-    echo "$scr" "$args"
-    exec "$scr" "$args"
+    # exec "$scr" "$args" # It's not working :( [Number of args = 1; illegal option]
+    exec "$scr" $args # It's working :)
 }
-
-call
 
 while getopts "ac:h" option; do
     case $option in
