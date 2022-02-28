@@ -15,6 +15,7 @@ echo "Number of args: $nargs [$scr $args]"
 
 call () {
     # exec "$scr" "$args" # It's not working :( [Number of args = 1; illegal option]
+    # shellckeck disable=SC2086
     exec "$scr" $args # It's working :)
 }
 
